@@ -1,0 +1,16 @@
+<h2>Todo List</h2>
+<p><a href='/'>Home</a></p>
+<table>
+ <tr>
+ <th>Task</th>
+ <th>Status</th>
+ </tr>
+ {% for task in tasks %}
+ <tr>
+ <td>{{ task.name }}</td>
+ <td>{{ task.status }}</td>
+ <td><a href='edit_task/{{ task.pk }}'>Edit</a></td>
+ </tr>
+ {% endfor %}
+</table>
+<a href='add_todo/'>Add Task</a><br />

@@ -1,0 +1,17 @@
+<h2>Movies</h2>
+<p><a href='/'>Home</a></p>
+<table>
+ <tr>
+ <th>Movie Title</th>
+ <th>Director</th>
+ <th>Genre</th>
+ </tr>
+ {% for movie in movies %}
+ <tr>
+ <td>{{ movie.title }}</td>
+ <td>{{ movie.dir_name }}</td>
+ <td>{{ movie.movie_genre }}</td>
+ <td><a href='edit_movie/{{ movie.pk }}'>Edit</a></td>
+ </tr>
+ {% endfor %}
+</table>
