@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return render(request, 'movieshelf/home.html')
+    return render(request, 'index.html')
 
 
 def simpleview(request):
