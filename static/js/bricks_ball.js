@@ -33,8 +33,8 @@ function calculateMousePos(evt) {
 
 window.onload = function() {
 	canvas = document.getElementById("bricks_ball_canvas");
-	canvas.width = 9*window.innerWidth/10;
-	canvas.height = 9*window.innerHeight/10;
+	canvas.width = 7*window.innerWidth/10;
+	canvas.height = 7*window.innerHeight/10;
 
 	canvasContext = canvas.getContext("2d");
 

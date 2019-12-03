@@ -46,6 +46,10 @@ function ballReset() {
 
 window.onload = function() {
 	canvas = document.getElementById("ping_pong_canvas");
+
+	canvas.width = 7*window.innerWidth/10;
+	canvas.height = 7*window.innerHeight/10;
+	
 	canvasContext = canvas.getContext("2d");
 
 	var framesPerSecond = 30;

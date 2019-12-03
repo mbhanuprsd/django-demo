@@ -8,8 +8,17 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'index.html')
 
-def games(request):
-    return render(request, "games.html")
+
+def ping_pong(request):
+    return render(request, "ping_pong.html")
+
+
+def rider(request):
+    return render(request, "rider.html")
+
+
+def bricks_ball(request):
+    return render(request, "bricks_ball.html")
 
 
 def simpleview(request):

@@ -13,5 +13,7 @@ urlpatterns = [
 	path("grant_wish/<str:name>", views.grant_wish, name='grant_wish'),
 	path("palindrome/<str:text>", views.palindrome, name='palindrome'),
 
-	path("games/", views.games, name='games'),
+	path("ping_pong/", views.ping_pong, name='ping_pong'),
+	path("rider/", views.rider, name='rider'),
+	path("bricks_ball/", views.bricks_ball, name='bricks_ball'),
 ]

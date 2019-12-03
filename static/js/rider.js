@@ -38,8 +38,12 @@ var showScoreScreen = false;
 
 window.onload = function(){
 	canvas = document.getElementById("rider_canvas");
-	canvasContext = canvas.getContext("2d");
+	
+	canvas.width = 2*window.innerWidth/10;
+	canvas.height = 7*window.innerHeight/10;
 
+	canvasContext = canvas.getContext("2d");
+	
 	carWidth = canvas.width/8;
 	carHeight = canvas.height/10;
 
@@ -53,10 +57,11 @@ window.onload = function(){
 	car.onload = function() {
 		setInterval(updateGame, 1000/framesPerSecond);
 	}
-	car.src = "images/car.png";
+	car.src = "../static/img/car.png";
 
-	canvas.addEventListener("keydown", handleKeyEvent);
-	canvas.addEventListener("mousedown", handleMouseClick);
+	canvas.addEventListener("keydown", handleKeyEvent, true);
+	canvas.addEventListener("mousedown", handleMouseClick, true);
+	canvas.addEventListener('mouseover',handlefocus,true); 
 }
 
 function initGame() {
@@ -77,7 +82,20 @@ function initGame() {
 	obstacle3Create = false;
 }
 
-function handleKeyEvent(evt) {
+// focus on the canvas on mouseover to detect key input
+var handlefocus=function(e){
+	if(e.type=='mouseover') 
+	{ 
+		canvas.focus(); return false;
+	} 
+	else if (e.type=='mouseout')
+	{ 
+		canvas.blur(); return false; 
+	} 
+	return true; 
+}; 
+
+var handleKeyEvent=function(evt) {
 	evt = evt || window.event;
 	switch(evt.keyCode) {
 		case LEFT_KEY:
@@ -105,7 +123,7 @@ function handleKeyEvent(evt) {
 	}
 }
 
-function handleMouseClick(evt) {
+var handleMouseClick = function(evt) {
 	if (showScoreScreen) {
 		showScoreScreen = false;
 		score = 0;

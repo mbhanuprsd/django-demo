@@ -38,8 +38,12 @@ var showScoreScreen = false;
 
 window.onload = function(){
 	canvas = document.getElementById("rider_canvas");
-	canvasContext = canvas.getContext("2d");
+	
+	canvas.width = 3*window.innerWidth/10;
+	canvas.height = 7*window.innerHeight/10;
 
+	canvasContext = canvas.getContext("2d");
+	
 	carWidth = canvas.width/8;
 	carHeight = canvas.height/10;
 
@@ -53,7 +57,7 @@ window.onload = function(){
 	car.onload = function() {
 		setInterval(updateGame, 1000/framesPerSecond);
 	}
-	car.src = "images/car.png";
+	car.src = "../static/img/car.png";
 
 	canvas.addEventListener("keydown", handleKeyEvent);
 	canvas.addEventListener("mousedown", handleMouseClick);
