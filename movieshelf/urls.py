@@ -12,4 +12,6 @@ urlpatterns = [
 	path("movies/edit_movie/<int:pk>", views.edit_movie, name='edit_movie'),
 	path("grant_wish/<str:name>", views.grant_wish, name='grant_wish'),
 	path("palindrome/<str:text>", views.palindrome, name='palindrome'),
+
+	path("games/", views.games, name='games'),
 ]

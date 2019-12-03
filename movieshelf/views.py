@@ -8,6 +8,9 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'index.html')
 
+def games(request):
+    return render(request, "games.html")
+
 
 def simpleview(request):
     html = "<html><body><h3>Hi from {}</h3></body></html>".format(sys.platform)

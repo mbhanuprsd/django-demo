@@ -121,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#uncomment to work on local server
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
